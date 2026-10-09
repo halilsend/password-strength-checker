@@ -24,4 +24,4 @@ if not any(c.isupper() for c in password):
 if problems:
     print("weak password. it needs: " + ", ".join(problems))
 else: 
-    print("password is valid")      
+    print("password is valid")            
