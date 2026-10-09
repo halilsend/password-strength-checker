@@ -1,3 +1,5 @@
+import string
+
 password = input("Enter a password: ")
 
 
@@ -12,6 +14,9 @@ if not any(c.islower() for c in password):
 if not any(c.isdigit() for c in password):
     problems.append("a digit")    
 
+if not any(c in string.punctuation for c in password):
+    problems.append("a special character")
+
 
 if not any(c.isupper() for c in password):
     problems.append("an uppercase letter")
@@ -20,4 +25,3 @@ if problems:
     print("weak password. it needs: " + ", ".join(problems))
 else: 
     print("password is valid")      
-    
